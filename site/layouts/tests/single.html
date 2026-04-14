@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+{{ $method_labels := dict
+  "universal"        "Universal"
+  "did"              "Difference-in-Differences"
+  "rdd"              "Regression Discontinuity"
+  "iv"               "Instrumental Variables"
+  "synth"            "Synthetic Control"
+  "experiment_lab"   "Lab &amp; Online Experiments"
+  "experiment_field" "Field Experiments"
+  "theory"           "Theory"
+  "ml_prediction"    "Machine Learning / Prediction"
+  "survey"           "Survey Methods"
+}}
+
+<nav class="breadcrumb">
+  <a href="{{ "/" | relURL }}">Home</a> &rsaquo; {{ .Title }}
+</nav>
+
+<article class="test">
+  <h1>{{ .Title }}</h1>
+
+  <div class="test-meta">
+    <div class="meta-row">
+      {{ range .Params.methodology }}
+        <span class="meta-tag">{{ index $method_labels . | default . | safeHTML }}</span>
+      {{ end }}
+    </div>
+    <div class="meta-row">
+      <span class="badge badge-{{ .Params.severity }}">{{ .Params.severity }}</span>
+      <span class="clarity">{{ .Params.clarity }}</span>
+      {{ range .Params.scope }}<span class="scope-tag">{{ . }}</span>{{ end }}
+    </div>
+    <div class="meta-row meta-secondary">
+      <span>Author: <code>{{ .Params.author }}</code></span>
+      <span>Version: {{ .Params.version }}</span>
+      <a href="{{ $.Site.Params.github }}/blob/main/{{ .Params.path }}" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="test-body">
+    {{ .Content }}
+  </div>
+</article>
+
+{{ end }}

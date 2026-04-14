@@ -1,0 +1,8 @@
+baseURL = "https://www.ricardodahis.com/research-unit-tests/"
+languageCode = "en-us"
+title = "Research Unit Tests"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Structured quality checks for academic research papers — analogous to unit tests in software engineering."
+  github = "https://github.com/rdahis/research-unit-tests"

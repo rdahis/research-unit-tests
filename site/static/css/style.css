@@ -1,0 +1,351 @@
+/* ============================================================
+   Research Unit Tests — Academic stylesheet
+   Inspired by NBER / IZA aesthetic:
+   serif headings, white background, functional typography
+   ============================================================ */
+
+:root {
+  --text:        #1a1a1a;
+  --text-sec:    #555555;
+  --accent:      #1a3a6b;   /* dark academic blue */
+  --border:      #d8d8d4;
+  --bg-light:    #f7f7f5;
+  --blocker:     #9b2317;
+  --warning:     #a85e0a;
+  --info:        #2a6e2a;
+  --font-serif:  Georgia, "Times New Roman", serif;
+  --font-sans:   -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono:   "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --max-width:   780px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+/* ── Base ── */
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: #fff;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+pre {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 3px;
+  margin: 1.2rem 0;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Header ── */
+header {
+  border-bottom: 2px solid var(--text);
+  padding: 0.85rem 0;
+  margin-bottom: 2.5rem;
+}
+
+header .container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: normal;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.site-title:hover { text-decoration: none; color: var(--accent); }
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+header nav a { color: var(--text-sec); }
+header nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ── Hero ── */
+.hero {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.hero .lead {
+  font-size: 1.08rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  color: var(--text-sec);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  max-width: 640px;
+}
+
+.hero-meta {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-sec);
+}
+
+.hero-meta a { color: var(--accent); }
+
+/* ── Methodology sections ── */
+.method-section {
+  margin-bottom: 2.75rem;
+}
+
+.method-section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.count {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-sec);
+  font-weight: normal;
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-sec);
+  padding: 0.4rem 0.6rem 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr {
+  border-bottom: 1px solid #eeeeeb;
+}
+
+tbody tr:last-child { border-bottom: none; }
+
+tbody td {
+  padding: 0.45rem 0.6rem 0.45rem 0;
+  vertical-align: middle;
+}
+
+tbody td:first-child { width: 55%; }
+tbody td:last-child  { color: var(--text-sec); font-size: 0.85rem; }
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 0.1em 0.45em;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.badge-blocker { background: #fde8e7; color: var(--blocker); }
+.badge-warning  { background: #fdf0e0; color: var(--warning); }
+.badge-info     { background: #e7f4e7; color: var(--info); }
+
+.clarity {
+  font-size: 0.82rem;
+  color: var(--text-sec);
+  font-style: italic;
+}
+
+.scope-tag {
+  font-size: 0.8rem;
+  color: var(--text-sec);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-sec);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--text-sec); }
+.breadcrumb a:hover { color: var(--accent); }
+
+/* ── Individual test page ── */
+.test h1 {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.test-meta {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.meta-tag {
+  font-size: 0.82rem;
+  background: #e8edf5;
+  color: var(--accent);
+  padding: 0.15em 0.5em;
+  border-radius: 2px;
+}
+
+.meta-secondary {
+  font-size: 0.82rem;
+  color: var(--text-sec);
+  gap: 1rem;
+}
+
+.meta-secondary a { font-size: 0.82rem; }
+
+/* ── Test body ── */
+.test-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin: 2rem 0 0.6rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.test-body h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.4rem;
+  color: var(--text);
+}
+
+.test-body p {
+  margin-bottom: 0.9rem;
+  max-width: 660px;
+}
+
+.test-body ol, .test-body ul {
+  margin: 0.5rem 0 1rem 1.4rem;
+}
+
+.test-body li {
+  margin-bottom: 0.35rem;
+  max-width: 660px;
+}
+
+.test-body blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  color: var(--text-sec);
+  margin: 1rem 0;
+}
+
+.test-body strong { font-weight: 600; }
+.test-body em { font-style: italic; }
+
+/* ── Static pages (contributing, etc.) ── */
+.page h1 {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+.page-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: normal;
+  margin: 2rem 0 0.6rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.2rem;
+}
+
+.page-body h3 { font-size: 1rem; margin: 1.2rem 0 0.4rem; }
+.page-body p  { margin-bottom: 0.9rem; max-width: 660px; }
+.page-body ul, .page-body ol { margin: 0.5rem 0 1rem 1.4rem; }
+.page-body li { margin-bottom: 0.35rem; }
+
+.page-body table {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-sec);
+}
+
+footer a { color: var(--text-sec); }
+footer a:hover { color: var(--accent); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.5rem; }
+
+  thead th:nth-child(3),
+  thead th:nth-child(4),
+  tbody td:nth-child(3),
+  tbody td:nth-child(4) { display: none; }
+}

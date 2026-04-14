@@ -5,3 +5,7 @@ __pycache__/
 dist/
 build/
 .venv/
+site/public/
+site/content/tests/
+site/content/contributing/
+site/data/registry.yaml

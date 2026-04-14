@@ -19,7 +19,7 @@
   <h1>Research Unit Tests</h1>
   <p class="lead">{{ .Site.Params.description }}</p>
   <p>Tests range from deterministic checks — does the replication package run? — to judgment calls — is the contribution interesting? Each test specifies what to check, how an agent should reason about it, and what constitutes a pass.</p>
-  <p class="hero-meta">{{ len $tests }} tests &middot; <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a> &middot; <a href="{{ "/contributing/" | relURL }}">Contributing</a></p>
+  <p class="hero-meta">{{ len $tests }} tests &middot; <a href="{{ "quick-start/" | relURL }}">Quick Start</a> &middot; <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a></p>
 </section>
 
 <section class="test-list">
@@ -41,7 +41,7 @@
         <tbody>
           {{ range $mtests }}
           <tr>
-            <td><a href="{{ printf "/tests/%s/" .id | relURL }}">{{ .name }}</a></td>
+            <td><a href="{{ printf "tests/%s/" .id | relURL }}">{{ .name }}</a></td>
             <td><span class="badge badge-{{ .severity }}">{{ .severity }}</span></td>
             <td><span class="clarity">{{ .clarity }}</span></td>
             <td>{{ delimit .scope ", " }}</td>

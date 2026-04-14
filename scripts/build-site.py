@@ -49,7 +49,7 @@ def main():
 
         # Add Hugo-required title and path (for GitHub link in template)
         fm["title"] = fm.get("name", path.stem)
-        fm["path"] = str(path.relative_to(REPO_ROOT))
+        fm["source_path"] = str(path.relative_to(REPO_ROOT))
 
         out_path = CONTENT_TESTS / f"{fm['id']}.md"
         with open(out_path, "w") as f:

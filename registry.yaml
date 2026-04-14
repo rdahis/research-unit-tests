@@ -36,6 +36,54 @@ tests:
   clarity: heuristic
   author: rdahis
   version: 1
+- path: core/experiment_field/spillovers.md
+  id: experiment-field-spillovers
+  name: 'Field experiment: Spillover effects addressed'
+  methodology:
+  - experiment_field
+  scope:
+  - paper
+  severity: blocker
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/experiment_lab/attrition.md
+  id: experiment-lab-attrition
+  name: 'Experiment: Attrition and differential attrition tested'
+  methodology:
+  - experiment_lab
+  - experiment_field
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/experiment_lab/balance-table.md
+  id: experiment-lab-balance-table
+  name: 'Experiment: Baseline covariate balance table reported'
+  methodology:
+  - experiment_lab
+  - experiment_field
+  scope:
+  - paper
+  severity: blocker
+  clarity: deterministic
+  author: rdahis
+  version: 1
+- path: core/experiment_lab/power-calculation.md
+  id: experiment-lab-power-calculation
+  name: 'Experiment: Power calculation reported or MDE stated'
+  methodology:
+  - experiment_lab
+  - experiment_field
+  scope:
+  - paper
+  - proposal
+  severity: warning
+  clarity: heuristic
+  author: rdahis
+  version: 1
 - path: core/iv/exclusion-restriction-argued.md
   id: iv-exclusion-restriction-argued
   name: 'IV: Exclusion restriction explicitly argued'
@@ -103,6 +151,83 @@ tests:
   clarity: heuristic
   author: rdahis
   version: 1
+- path: core/synth/donor-pool-selection.md
+  id: synth-donor-pool-selection
+  name: 'Synth: Donor pool selection justified'
+  methodology:
+  - synth
+  scope:
+  - paper
+  severity: blocker
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/synth/placebo-tests.md
+  id: synth-placebo-tests
+  name: 'Synth: In-space and/or in-time placebo tests reported'
+  methodology:
+  - synth
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/synth/single-treated-unit.md
+  id: synth-single-treated-unit
+  name: 'Synth: Single-unit design limitations acknowledged'
+  methodology:
+  - synth
+  scope:
+  - paper
+  severity: warning
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/theory/assumptions-stated.md
+  id: theory-assumptions-stated
+  name: 'Theory: All model assumptions stated explicitly'
+  methodology:
+  - theory
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/theory/economic-intuition.md
+  id: theory-economic-intuition
+  name: 'Theory: Economic intuition provided for main results'
+  methodology:
+  - theory
+  scope:
+  - paper
+  severity: warning
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/theory/results-proven.md
+  id: theory-results-proven
+  name: 'Theory: Main results formally proven, not just stated'
+  methodology:
+  - theory
+  scope:
+  - paper
+  severity: blocker
+  clarity: deterministic
+  author: rdahis
+  version: 1
+- path: core/universal/abstract-intro-consistent.md
+  id: universal-abstract-intro-consistent
+  name: Abstract, introduction, and results internally consistent
+  methodology:
+  - universal
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
 - path: core/universal/contribution-is-feasible.md
   id: universal-contribution-is-feasible
   name: Project is feasible given stated resources and timeline
@@ -138,6 +263,17 @@ tests:
   clarity: judgment
   author: rdahis
   version: 1
+- path: core/universal/effect-size-magnitude.md
+  id: universal-effect-size-magnitude
+  name: Effect sizes reported with economic significance assessment
+  methodology:
+  - universal
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
 - path: core/universal/ols-omitted-variable-discussed.md
   id: universal-ols-omitted-variable-discussed
   name: OLS/correlational papers address omitted variable bias
@@ -159,6 +295,17 @@ tests:
   - replication
   severity: blocker
   clarity: deterministic
+  author: rdahis
+  version: 1
+- path: core/universal/robustness-section.md
+  id: universal-robustness-section
+  name: Main results accompanied by robustness checks
+  methodology:
+  - universal
+  scope:
+  - paper
+  severity: warning
+  clarity: heuristic
   author: rdahis
   version: 1
 - path: core/universal/standard-errors-clustered.md

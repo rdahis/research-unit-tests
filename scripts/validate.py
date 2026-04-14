@@ -77,11 +77,19 @@ def validate_file(path):
     if "id" in fm:
         if not re.match(r"^[a-z0-9-]+$", fm["id"]):
             errors.append(f"'id' must be kebab-case: {fm['id']}")
-        # Filename must match either full id or id without methodology prefix.
-        # e.g. id=did-parallel-trends-plot may live as parallel-trends-plot.md in core/did/
+        # Filename must match either the full id or the id with the methodology
+        # prefix stripped. The prefix is derived from the parent directory name
+        # (underscores replaced with hyphens). This allows files in core/did/ to
+        # use either 'did-parallel-trends-plot.md' or 'parallel-trends-plot.md',
+        # and files in core/experiment_lab/ to use 'attrition.md' (stripping
+        # 'experiment-lab-' from 'experiment-lab-attrition').
         stem = path.stem
         id_val = fm["id"]
-        short_id = re.sub(r"^[a-z]+-", "", id_val, count=1)  # strip first segment
+        dir_prefix = path.parent.name.replace("_", "-") + "-"
+        if id_val.startswith(dir_prefix):
+            short_id = id_val[len(dir_prefix):]
+        else:
+            short_id = re.sub(r"^[a-z]+-", "", id_val, count=1)
         if stem != id_val and stem != short_id:
             errors.append(
                 f"Filename '{path.name}' must match id '{id_val}' "

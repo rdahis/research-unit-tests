@@ -391,7 +391,7 @@ tests:
   scope:
   - paper
   - proposal
-  severity: blocker
+  severity: warning
   clarity: judgment
   author: rdahis
   version: 1
@@ -403,7 +403,7 @@ tests:
   scope:
   - paper
   - proposal
-  severity: blocker
+  severity: warning
   clarity: judgment
   author: rdahis
   version: 1

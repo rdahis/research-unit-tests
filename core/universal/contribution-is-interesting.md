@@ -6,7 +6,7 @@ methodology:
 scope:
   - paper
   - proposal
-severity: blocker
+severity: warning
 clarity: judgment
 tags: [contribution, impact, framing]
 author: rdahis

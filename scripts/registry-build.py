@@ -34,7 +34,11 @@ def main():
         list(REPO_ROOT.glob("core/**/*.md")) +
         list(REPO_ROOT.glob("community/**/*.md"))
     )
-    test_files = [f for f in test_files if f.name not in {"README.md", "SPEC.md", "CONTRIBUTING.md"}]
+    test_files = [
+        f for f in test_files
+        if f.name not in {"README.md", "SPEC.md", "CONTRIBUTING.md"}
+        and "community/example" not in f.as_posix()
+    ]
 
     entries = []
     errors = []

@@ -1,0 +1,53 @@
+name: Test Error or Improvement
+description: Report an error in an existing test or suggest an improvement
+labels: ["test-error", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report an error, outdated reference, ambiguous instruction, or suggested improvement to an existing test.
+
+  - type: input
+    id: test_id
+    attributes:
+      label: Test ID
+      description: The ID of the test (e.g., `universal-standard-errors-clustered`)
+      placeholder: "did-parallel-trends-plot"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type of issue
+      options:
+        - Factual error (wrong threshold, incorrect reference, etc.)
+        - Outdated (newer literature supersedes the guidance)
+        - Ambiguous instructions (unclear how to evaluate)
+        - Too strict (pass condition is unreasonably demanding)
+        - Too lenient (test can be gamed or is insufficient)
+        - Missing failure example
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the problem clearly. Quote the specific text if applicable.
+      placeholder: "The pass condition says F > 10, but Stock-Yogo (2005) shows..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: Proposed fix
+      description: What should the test say instead? (Optional, but helpful)
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Cite any papers supporting the proposed change

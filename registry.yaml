@@ -3,6 +3,28 @@
 # Run `python scripts/registry-build.py` to regenerate.
 
 tests:
+- path: core/did/control-group-selection.md
+  id: did-control-group-selection
+  name: 'DiD: Control group selection justified and robust to alternatives'
+  methodology:
+  - did
+  scope:
+  - paper
+  severity: warning
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/did/event-study.md
+  id: did-event-study
+  name: 'DiD: Event study (dynamic effects) reported'
+  methodology:
+  - did
+  scope:
+  - paper
+  severity: blocker
+  clarity: deterministic
+  author: rdahis
+  version: 1
 - path: core/did/parallel-trends-plot.md
   id: did-parallel-trends-plot
   name: 'DiD: Pre-trends visualization shown and plausible'
@@ -84,6 +106,17 @@ tests:
   clarity: heuristic
   author: rdahis
   version: 1
+- path: core/iv/anderson-rubin.md
+  id: iv-anderson-rubin
+  name: 'IV: Weak-instrument-robust inference used when F-statistic is borderline'
+  methodology:
+  - iv
+  scope:
+  - paper
+  severity: warning
+  clarity: deterministic
+  author: rdahis
+  version: 1
 - path: core/iv/exclusion-restriction-argued.md
   id: iv-exclusion-restriction-argued
   name: 'IV: Exclusion restriction explicitly argued'
@@ -107,6 +140,17 @@ tests:
   clarity: deterministic
   author: rdahis
   version: 1
+- path: core/iv/monotonicity-argued.md
+  id: iv-monotonicity-argued
+  name: 'IV: Monotonicity assumption explicitly argued'
+  methodology:
+  - iv
+  scope:
+  - paper
+  severity: warning
+  clarity: judgment
+  author: rdahis
+  version: 1
 - path: core/iv/reduced-form-shown.md
   id: iv-reduced-form-shown
   name: 'IV: Reduced form reported alongside IV estimates'
@@ -115,6 +159,61 @@ tests:
   scope:
   - paper
   severity: warning
+  clarity: deterministic
+  author: rdahis
+  version: 1
+- path: core/ml_prediction/benchmark-comparison.md
+  id: ml-prediction-benchmark-comparison
+  name: 'ML: Performance compared to a simple benchmark'
+  methodology:
+  - ml_prediction
+  scope:
+  - paper
+  severity: warning
+  clarity: deterministic
+  author: rdahis
+  version: 1
+- path: core/ml_prediction/feature-leakage.md
+  id: ml-prediction-feature-leakage
+  name: 'ML: No feature leakage from outcome or future data'
+  methodology:
+  - ml_prediction
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/ml_prediction/performance-metric.md
+  id: ml-prediction-performance-metric
+  name: 'ML: Performance metric appropriate for task and outcome distribution'
+  methodology:
+  - ml_prediction
+  scope:
+  - paper
+  severity: warning
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/ml_prediction/prediction-inference-distinction.md
+  id: ml-prediction-inference-distinction
+  name: 'ML: Prediction claims not confused with causal inference'
+  methodology:
+  - ml_prediction
+  scope:
+  - paper
+  severity: blocker
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/ml_prediction/train-test-split.md
+  id: ml-prediction-train-test-split
+  name: 'ML: Model performance evaluated on held-out data'
+  methodology:
+  - ml_prediction
+  scope:
+  - paper
+  severity: blocker
   clarity: deterministic
   author: rdahis
   version: 1
@@ -149,6 +248,51 @@ tests:
   - paper
   severity: blocker
   clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/survey/instrument-validity.md
+  id: survey-instrument-validity
+  name: 'Survey: Key questions pre-tested or drawn from validated instruments'
+  methodology:
+  - survey
+  scope:
+  - paper
+  - proposal
+  severity: warning
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/survey/measurement-error.md
+  id: survey-measurement-error
+  name: 'Survey: Measurement error in self-reported variables acknowledged'
+  methodology:
+  - survey
+  scope:
+  - paper
+  severity: warning
+  clarity: judgment
+  author: rdahis
+  version: 1
+- path: core/survey/response-rate.md
+  id: survey-response-rate
+  name: 'Survey: Response rate reported and non-response bias addressed'
+  methodology:
+  - survey
+  scope:
+  - paper
+  severity: blocker
+  clarity: heuristic
+  author: rdahis
+  version: 1
+- path: core/survey/sampling-design.md
+  id: survey-sampling-design
+  name: 'Survey: Complex sampling design accounted for in standard errors'
+  methodology:
+  - survey
+  scope:
+  - paper
+  severity: blocker
+  clarity: deterministic
   author: rdahis
   version: 1
 - path: core/synth/donor-pool-selection.md

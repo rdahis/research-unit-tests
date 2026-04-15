@@ -39,6 +39,8 @@ def main():
     for path in sorted(test_files):
         if path.name in {"README.md", "SPEC.md", "CONTRIBUTING.md"}:
             continue
+        if "community/example" in path.as_posix():
+            continue
         text = path.read_text()
         m = FRONTMATTER_RE.match(text)
         if not m:

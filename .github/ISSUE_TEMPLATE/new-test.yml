@@ -1,0 +1,92 @@
+name: New Test Proposal
+description: Propose a new research unit test
+labels: ["new-test", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a new test. Fill in as much as you can — incomplete proposals are welcome if you want early feedback.
+
+  - type: input
+    id: name
+    attributes:
+      label: Test name
+      description: Short descriptive name (≤ 80 chars)
+      placeholder: "DiD: Parallel trends holds for outcome proxies"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: methodology
+    attributes:
+      label: Methodology
+      description: Which methodology does this test apply to?
+      multiple: true
+      options:
+        - universal
+        - did
+        - rdd
+        - iv
+        - synth
+        - experiment_lab
+        - experiment_field
+        - theory
+        - ml_prediction
+        - survey
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - blocker
+        - warning
+        - info
+    validations:
+      required: true
+
+  - type: dropdown
+    id: clarity
+    attributes:
+      label: Clarity
+      options:
+        - deterministic
+        - heuristic
+        - judgment
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_to_check
+    attributes:
+      label: What to check
+      description: What methodological principle does this test verify? Why does it matter?
+      placeholder: "Describe the principle in 2–4 sentences..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: how_to_check
+    attributes:
+      label: How to check
+      description: Step-by-step instructions for running this test
+      placeholder: "1. Look for X...\n2. Check whether Y..."
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Peer-reviewed papers or textbooks supporting this test
+      placeholder: "Cameron & Miller (2015)..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked the registry.yaml and this test is not already covered
+        - label: I am willing to write the full test file if the proposal is accepted

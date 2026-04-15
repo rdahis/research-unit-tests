@@ -20,6 +20,8 @@ From the registry (`registry.yaml`), load all tests where:
 - `methodology` includes `universal` OR one of the paper's methodologies
 - `scope` includes the artifact type being tested
 
+If the user requests **quick mode** (e.g., "run blockers only" or "quick check"), load only tests where `severity: blocker`. Skip warnings and info tests; note at the top of the report that only blockers were run.
+
 Read each test file fully before running it.
 
 ---
@@ -54,6 +56,7 @@ After all tests, produce a structured summary:
 
 **Artifact**: [paper/proposal/replication]
 **Methodology**: [list]
+**Mode**: [full / blockers-only]
 **Tests run**: N
 **Blockers failed**: N
 **Warnings**: N
